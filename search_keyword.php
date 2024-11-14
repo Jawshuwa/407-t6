@@ -22,7 +22,7 @@ echo "<h2>Show all jokes with the word " . $keywordfromform . "</h2>";
 //$keywordfromform = "%" . $keywordfromform . "%";
 
 //$stmt = $mysqli->prepare("SELECT JokeID, Joke_question, Joke_answer, jokes_table.user_id, user_name FROM Jokes_table JOIN users ON users.user_id = jokes_table.user_id WHERE Joke_question LIKE ?");
-$stmt = $mysqli->prepare("SELECT JokeID, Joke_question, Joke_answer, jokes_table.user_id, user_name FROM Jokes_table JOIN users ON users.user_id = jokes_table.user_id WHERE Joke_question LIKE '%" . $keywordfromform . "%'");
+$stmt = $mysqli->prepare("SELECT JokeID, Joke_question, Joke_answer, jokes_table.user_id, user_name FROM jokes_table JOIN users ON users.user_id = jokes_table.user_id WHERE Joke_question LIKE '%" . $keywordfromform . "%'");
 //echo "SELECT JokeID, Joke_question, Joke_answer, jokes_table.user_id, user_name FROM Jokes_table JOIN users ON users.user_id = jokes_table.user_id WHERE Joke_question LIKE " . $keywordfromform;
 //$stmt->bind_param("s", $keywordfromform);
 
